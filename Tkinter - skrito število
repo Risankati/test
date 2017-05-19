@@ -1,0 +1,27 @@
+# -*- coding: utf-8 -*-
+import Tkinter
+import tkMessageBox
+
+window = Tkinter.Tk()
+
+greeting = Tkinter.Label(window, text="Živ! Ugani skrito število!")
+greeting.pack()
+
+number = 88
+
+def check_guess():
+    if int(guess.get()) == number:
+        result_text = "BRAVO!"
+    elif int(guess.get()) > number:
+        result_text = "Narobe! Previsoko!"
+    else:
+        result_text = "Narobe! Prenizko!"
+
+    tkMessageBox.showinfo("Rezultat", result_text)
+
+submit = Tkinter.Button(window, text="Ugani", command=check_guess)
+submit.pack()
+guess = Tkinter.Entry(window)
+guess.pack()
+
+window.mainloop()
